@@ -1,7 +1,33 @@
+# Dependencies
 node_modules/
-*.log
-.env
-.DS_Store
+
+# Build outputs
 dist/
 build/
+.angular/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
 coverage/
+.nyc_output/
+
+# Misc
+*.orig
