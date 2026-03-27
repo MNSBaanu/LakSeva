@@ -1,7 +1,17 @@
+import Hero from '@/components/home/Hero';
+import Categories from '@/components/home/Categories';
+import HowItWorks from '@/components/home/HowItWorks';
+import FeaturedProviders from '@/components/home/FeaturedProviders';
+import CallToAction from '@/components/home/CallToAction';
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-4xl font-bold">LakSeva</h1>
+    <main>
+      <Hero />
+      <Categories />
+      <HowItWorks />
+      <FeaturedProviders />
+      <CallToAction />
     </main>
   );
 }
