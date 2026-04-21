@@ -10,6 +10,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
 [![Built by MNSBaanu](https://img.shields.io/badge/Built%20by-MNSBaanu-1E5C4B?style=flat-square)](https://github.com/MNSBaanu)
+[![Live on Netlify](https://img.shields.io/badge/Live-lakseva.netlify.app-00C7B7?style=flat-square&logo=netlify)](https://lakseva.netlify.app)
 
 </div>
 
@@ -67,6 +68,14 @@ Inspired by the **Sri Lanka National Flag**:
 
 ---
 
+## Live Demo
+
+**[https://lakseva.netlify.app](https://lakseva.netlify.app)**
+
+Deployed on Netlify via GitHub. Every push to `main` triggers an automatic redeploy.
+
+---
+
 ## Getting Started
 
 ```bash
@@ -75,6 +84,27 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Deployment
+
+This project is deployed on **Netlify** using the `@netlify/plugin-nextjs` plugin.
+
+```toml
+# netlify.toml
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+```
+
+To deploy your own instance:
+1. Fork this repo
+2. Connect it to [Netlify](https://netlify.com)
+3. Netlify auto-detects the config and deploys on every push
 
 ---
 
