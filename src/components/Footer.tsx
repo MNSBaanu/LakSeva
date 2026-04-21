@@ -7,8 +7,8 @@ export default function Footer() {
         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: 40 }}>
           <div>
             <span style={{ fontSize: 24, fontWeight: 800 }}>
-              <span style={{ color: '#C0183F' }}>Lak</span>
-              <span style={{ color: '#1E5C4B' }}>Seva</span>
+              <span style={{ color: '#C0183F' }}>ලක්</span>
+              <span style={{ color: '#1E5C4B' }}> Seva</span>
             </span>
             <p style={{ marginTop: 12, fontSize: 14, color: '#5a5a5a', maxWidth: 280, lineHeight: 1.75 }}>
               Connecting Sri Lankan communities with trusted local service providers across the island.

@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/LakSeva-Local%20Service%20Marketplace-C0183F?style=for-the-badge" />
+<img src="https://img.shields.io/badge/ලක්%20Seva-Local%20Service%20Marketplace-C0183F?style=for-the-badge" />
 
-# 🇱🇰 LakSeva
+# 🇱🇰 ලක් Seva
 
 ### Sri Lanka's Community-Driven Local Service Marketplace
 
@@ -18,11 +18,11 @@
 
 ## The Idea
 
-LakSeva was born from a simple observation —finding a reliable local service provider in Sri Lanka is still word-of-mouth. There's no single platform that brings together all the local services available across the country, from the smallest town to the biggest city.
+ලක් Seva was born from a simple observation — finding a reliable local service provider in Sri Lanka is still word-of-mouth. There's no single platform that brings together all the local services available across the country, from the smallest town to the biggest city.
 
-**LakSeva** is that platform. It connects everyday people with trusted local service providers across Sri Lanka — electricians, tutors, caterers, photographers, tailors, and more — all at the community level. Not large corporations. Real people, real services, real communities.
+**ලක් Seva** is that platform. It connects everyday people with trusted local service providers across Sri Lanka — electricians, tutors, caterers, photographers, tailors, and more — all at the community level. Not large corporations. Real people, real services, real communities.
 
-> _"ලක සේවා"_ — Serving Sri Lanka, one community at a time.
+> _"ලක් සේවා"_ — Serving Sri Lanka, one community at a time.
 
 ---
 

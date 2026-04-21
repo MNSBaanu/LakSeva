@@ -17,7 +17,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "LakSeva - Sri Lanka's Local Service Marketplace",
+  title: "ලක් Seva - Sri Lanka's Local Service Marketplace",
   description: 'Find and book trusted local service providers across Sri Lanka.',
 };
 

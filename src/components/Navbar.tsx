@@ -5,8 +5,8 @@ export default function Navbar() {
     <nav style={{ backgroundColor: '#F5F5F5', borderBottom: '1px solid #DCDCDC' }} className="sticky top-0 z-50">
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 64 }}>
         <Link href="/" style={{ textDecoration: 'none', fontSize: 24, fontWeight: 800 }}>
-          <span style={{ color: '#C0183F' }}>Lak</span>
-          <span style={{ color: '#1E5C4B' }}>Seva</span>
+          <span style={{ color: '#C0183F' }}>ලක්</span>
+          <span style={{ color: '#1E5C4B' }}> Seva</span>
         </Link>
 
         <div style={{ display: 'flex', gap: 32, fontSize: 14, fontWeight: 500 }}>
