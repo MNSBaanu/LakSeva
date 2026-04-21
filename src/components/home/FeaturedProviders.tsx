@@ -1,3 +1,8 @@
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/translations';
+
 const providers = [
   { name: 'Kamal Perera', service: 'Electrical', location: 'Colombo', rating: 4.9, reviews: 84 },
   { name: 'Nimal Silva', service: 'Vehicle Repair', location: 'Kandy', rating: 4.8, reviews: 61 },
@@ -6,12 +11,15 @@ const providers = [
 ];
 
 export default function FeaturedProviders() {
+  const { language } = useLanguage();
+  const t = translations[language].featuredProviders;
+
   return (
     <section style={{ backgroundColor: '#EFEFEF', padding: '72px 24px' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
-          <h2 style={{ fontSize: 36, fontWeight: 700, color: '#03110D', margin: 0 }}>Featured Providers</h2>
-          <p style={{ marginTop: 8, fontSize: 15, color: '#5a5a5a' }}>Top-rated professionals in your area</p>
+          <h2 style={{ fontSize: 36, fontWeight: 700, color: '#03110D', margin: 0 }}>{t.heading}</h2>
+          <p style={{ marginTop: 8, fontSize: 15, color: '#5a5a5a' }}>{t.subtext}</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
@@ -45,7 +53,7 @@ export default function FeaturedProviders() {
               <div style={{ marginTop: 12, display: 'flex', alignItems: 'center', gap: 4, fontSize: 14 }}>
                 <span style={{ color: '#A38560', fontWeight: 700 }}>★</span>
                 <span style={{ fontWeight: 700, color: '#03110D' }}>{p.rating}</span>
-                <span style={{ fontSize: 12, color: '#5a5a5a' }}>({p.reviews} reviews)</span>
+                <span style={{ fontSize: 12, color: '#5a5a5a' }}>({p.reviews} {t.reviews})</span>
               </div>
               <button style={{
                 marginTop: 16,
@@ -59,7 +67,7 @@ export default function FeaturedProviders() {
                 fontWeight: 600,
                 cursor: 'pointer',
               }}>
-                View Profile
+                {t.viewProfile}
               </button>
             </div>
           ))}

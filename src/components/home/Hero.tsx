@@ -1,4 +1,12 @@
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/translations';
+
 export default function Hero() {
+  const { language } = useLanguage();
+  const t = translations[language].hero;
+
   return (
     <section style={{ backgroundColor: '#F5F5F5', padding: '88px 24px' }}>
       <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
@@ -13,23 +21,22 @@ export default function Hero() {
           marginBottom: 24,
           letterSpacing: '0.03em',
         }}>
-          Sri Lanka&apos;s Local Service Marketplace
+          {t.badge}
         </span>
 
         <h1 style={{ fontSize: 58, fontWeight: 800, color: '#03110D', lineHeight: 1.15, margin: 0 }}>
-          Find Trusted Local Services{' '}
-          <span style={{ color: '#C0183F' }}>Near You</span>
+          {t.heading1}{' '}
+          <span style={{ color: '#C0183F' }}>{t.heading2}</span>
         </h1>
 
         <p style={{ marginTop: 20, fontSize: 18, color: '#5a5a5a', lineHeight: 1.75, maxWidth: 600, margin: '20px auto 0' }}>
-          From home repairs to personal care — discover and book reliable service providers
-          in your community across Sri Lanka.
+          {t.subtext}
         </p>
 
         <div style={{ marginTop: 36, display: 'flex', gap: 12, maxWidth: 680, margin: '36px auto 0' }}>
           <input
             type="text"
-            placeholder="What service are you looking for?"
+            placeholder={t.searchPlaceholder}
             style={{
               flex: 1,
               padding: '14px 20px',
@@ -43,7 +50,7 @@ export default function Hero() {
           />
           <input
             type="text"
-            placeholder="Location"
+            placeholder={t.locationPlaceholder}
             style={{
               width: 160,
               padding: '14px 20px',
@@ -66,13 +73,13 @@ export default function Hero() {
             cursor: 'pointer',
             whiteSpace: 'nowrap',
           }}>
-            Search
+            {t.searchBtn}
           </button>
         </div>
 
         <div style={{ marginTop: 20, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 8, fontSize: 13, color: '#5a5a5a' }}>
-          <span>Popular:</span>
-          {['Tutoring', 'Electrical', 'Beauty', 'Catering', 'Photography'].map((tag) => (
+          <span>{t.popular}</span>
+          {t.tags.map((tag) => (
             <span
               key={tag}
               style={{

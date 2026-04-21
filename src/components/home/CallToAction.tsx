@@ -1,14 +1,21 @@
+'use client';
+
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/translations';
 
 export default function CallToAction() {
+  const { language } = useLanguage();
+  const t = translations[language].cta;
+
   return (
     <section style={{ backgroundColor: '#1E5C4B', padding: '80px 24px' }}>
       <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
         <h2 style={{ fontSize: 40, fontWeight: 800, color: '#fff', margin: 0 }}>
-          Are you a service provider?
+          {t.heading}
         </h2>
         <p style={{ marginTop: 16, fontSize: 16, color: '#A8D5C2', lineHeight: 1.75 }}>
-          Join LakSeva and reach thousands of customers in your community. It&apos;s free to get started.
+          {t.subtext}
         </p>
         <div style={{ marginTop: 36, display: 'flex', justifyContent: 'center', gap: 16 }}>
           <Link
@@ -23,7 +30,7 @@ export default function CallToAction() {
               textDecoration: 'none',
             }}
           >
-            Join as Provider
+            {t.joinBtn}
           </Link>
           <Link
             href="/services"
@@ -37,7 +44,7 @@ export default function CallToAction() {
               textDecoration: 'none',
             }}
           >
-            Browse Services
+            {t.browseBtn}
           </Link>
         </div>
       </div>
