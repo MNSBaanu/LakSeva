@@ -1,11 +1,25 @@
 'use client';
 
+import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations } from '@/translations';
 
 export default function Hero() {
   const { language } = useLanguage();
   const t = translations[language].hero;
+  const router = useRouter();
+  const [query, setQuery] = useState('');
+  const [location, setLocation] = useState('');
+
+  const search = () => {
+    const sp = new URLSearchParams();
+    if (query.trim()) sp.set('q', query.trim());
+    if (location.trim()) sp.set('location', location.trim());
+    const qs = sp.toString();
+    router.push(qs ? `/providers?${qs}` : '/providers');
+  };
 
   return (
     <section style={{ backgroundColor: '#F5F5F5', padding: '88px 24px' }}>
@@ -33,9 +47,17 @@ export default function Hero() {
           {t.subtext}
         </p>
 
-        <div style={{ marginTop: 36, display: 'flex', gap: 12, maxWidth: 680, margin: '36px auto 0' }}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            search();
+          }}
+          style={{ marginTop: 36, display: 'flex', gap: 12, maxWidth: 680, margin: '36px auto 0' }}
+        >
           <input
             type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
             placeholder={t.searchPlaceholder}
             style={{
               flex: 1,
@@ -50,6 +72,8 @@ export default function Hero() {
           />
           <input
             type="text"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
             placeholder={t.locationPlaceholder}
             style={{
               width: 160,
@@ -62,7 +86,7 @@ export default function Hero() {
               outline: 'none',
             }}
           />
-          <button style={{
+          <button type="submit" style={{
             backgroundColor: '#C0183F',
             color: '#fff',
             padding: '14px 28px',
@@ -75,23 +99,25 @@ export default function Hero() {
           }}>
             {t.searchBtn}
           </button>
-        </div>
+        </form>
 
         <div style={{ marginTop: 20, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 8, fontSize: 13, color: '#5a5a5a' }}>
           <span>{t.popular}</span>
-          {t.tags.map((tag) => (
-            <span
+          {t.tags.map((tag, i) => (
+            <Link
               key={tag}
+              href={`/providers?q=${encodeURIComponent(translations.en.hero.tags[i])}`}
               style={{
                 padding: '4px 14px',
                 borderRadius: 999,
                 border: '1px solid #A38560',
                 color: '#03110D',
                 cursor: 'pointer',
+                textDecoration: 'none',
               }}
             >
               {tag}
-            </span>
+            </Link>
           ))}
         </div>
       </div>

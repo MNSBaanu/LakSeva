@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations } from '@/translations';
 
@@ -16,20 +17,23 @@ export default function Categories() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
-          {t.items.map((cat) => (
-            <div
+          {t.items.map((cat, i) => (
+            <Link
               key={cat.label}
+              href={`/providers?category=${encodeURIComponent(translations.en.categories.items[i].label)}`}
               style={{
                 backgroundColor: '#fff',
                 borderRadius: 14,
                 padding: '28px 24px',
                 border: '1px solid #E0E0E0',
                 cursor: 'pointer',
+                textDecoration: 'none',
+                display: 'block',
               }}
             >
               <p style={{ fontWeight: 700, fontSize: 16, color: '#03110D' }}>{cat.label}</p>
               <p style={{ marginTop: 6, fontSize: 13, color: '#A38560' }}>{cat.count}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
