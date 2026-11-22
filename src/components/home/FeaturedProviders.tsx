@@ -1,14 +1,10 @@
 'use client';
 
+import Link from 'next/link';
+import { featuredProviders as providers } from '@/data/providers';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations } from '@/translations';
 
-const providers = [
-  { name: 'Kamal Perera', service: 'Electrical', location: 'Colombo', rating: 4.9, reviews: 84 },
-  { name: 'Nimal Silva', service: 'Vehicle Repair', location: 'Kandy', rating: 4.8, reviews: 61 },
-  { name: 'Sanduni Fernando', service: 'Beauty & Salon', location: 'Galle', rating: 5.0, reviews: 112 },
-  { name: 'Ruwan Jayasinghe', service: 'Photography', location: 'Colombo', rating: 4.7, reviews: 47 },
-];
 
 export default function FeaturedProviders() {
   const { language } = useLanguage();
@@ -55,7 +51,12 @@ export default function FeaturedProviders() {
                 <span style={{ fontWeight: 700, color: '#03110D' }}>{p.rating}</span>
                 <span style={{ fontSize: 12, color: '#5a5a5a' }}>({p.reviews} {t.reviews})</span>
               </div>
-              <button style={{
+              <Link
+                href={`/providers?q=${encodeURIComponent(p.name)}`}
+                style={{
+                display: 'block',
+                textAlign: 'center',
+                textDecoration: 'none',
                 marginTop: 16,
                 width: '100%',
                 padding: '10px 0',
@@ -68,7 +69,7 @@ export default function FeaturedProviders() {
                 cursor: 'pointer',
               }}>
                 {t.viewProfile}
-              </button>
+              </Link>
             </div>
           ))}
         </div>
